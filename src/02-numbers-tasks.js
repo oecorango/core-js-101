@@ -111,8 +111,17 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  const x1x2 = x1 + x2;
+  const y1y2 = y1 + y2;
+  let res = 0;
+  if (Math.abs(x1x2) === Math.abs(y1y2)) {
+    res = (Math.PI) / 2;
+  }
+  if (x1x2 === 0 && y1y2 === 0) {
+    res = Math.PI;
+  }
+  return res;
 }
 
 /**
